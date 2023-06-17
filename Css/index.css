@@ -1,0 +1,599 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+:root{
+    --Main-Color:#ff9800;
+   --Main-transition: 0.3s;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+nav{
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    z-index: 1000000000000000000000;
+    display: block;
+}
+nav.Show{
+    display: none;
+}
+
+nav span{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: 3px solid var(--Main-Color);
+    display: block;
+    position: relative;
+} 
+nav span p{
+    display: none;
+    color: white;
+    width: 150px;
+    background-color: var(--Main-Color);
+    position: absolute;
+    border-radius: 10px;
+    top: -7px;
+    text-align: center;
+    right: 20px;
+    font-size: 25px;
+    transition: var(--Main-transition);
+
+}
+nav span:hover p{
+    display: block;
+}
+/* Start Landing */
+.Landing{
+    min-height: 100vh;
+    background-image: url(../imgs/01.jpg);
+    background-size: cover;
+    width: 100%;
+    position: relative;
+}
+.Landing .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.329);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+/* End Landing */
+/* Start Hedaer */
+.Header{
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+.Header .container .box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+}
+.Header .container .box h2{
+    color: white;
+    font-size: 20px;
+}
+.Header .container .box ul .button{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.Header .container .box ul .button .links{
+    display: none;
+      position: absolute;
+      min-width: 200px;
+      right: 20px;
+      background-color: white;
+      top: 50px;
+}
+.Header .container .box ul .button .links  li a{
+    display: block;
+    transition: var(--Main-transition);
+    padding: 10px;
+    color: black;
+}
+.Header .container .box ul .button .links  li a:hover,
+.Header .container .box ul .button .links  li a.actvie{
+    color: var(--Main-Color);
+    padding-left: 30px;
+}
+.Header .container .box ul .button .links.Start{
+    display: block;
+}
+.Header .container .box ul .button.open{
+    display: block;
+}
+.Header .container .box ul .button span{
+    width: 100%;
+    height: 2px;
+    margin-bottom: 4px;
+    background-color: white;
+    display: none;
+}
+@media (max-width:992px) {
+.Header .container .box ul .button span{
+    display: block;
+}
+}
+@media (max-width:992px) {
+.Header .container .box ul .links-rel{
+    display: none;
+}
+}
+.Header .container .box ul  li{
+    display: inline;
+    margin-right: 10px;
+}
+.Header .container .box ul  li a{
+    transition: var(--Main-transition);
+    font-size: 25px;
+    color: white;
+}
+.Header .container .box ul  li a:hover,
+.Header .container .box ul  li a.active{
+color: var(--Main-Color);
+}
+/* End Hedaer */
+/* Startr Setting */
+.Setting{
+    padding: 15px;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    z-index: 100;
+    transition: var(--Main-transition);
+}
+.Setting .icon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -30px;
+    background-color: var(--Main-Color);
+    padding: 5px 0px;
+    width: 30px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.Setting.open {
+    left: 0;
+}
+.Setting .color{
+    text-align: center;
+    padding: 10px;
+    background-color: #eee;   
+}
+.Setting .color ul li{
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.3;
+    cursor: pointer;
+}
+.Setting .color ul li.active{
+    opacity: 1;
+    transition: var(--Main-transition);
+}
+.Setting .color ul li:first-child{
+    background-color: #ff9800;
+}.Setting .color ul li:nth-child(2){
+    background-color: #e91e63;
+}.Setting .color ul li:nth-child(3){
+    background-color: #009688;
+}.Setting .color ul li:nth-child(4){
+    background-color: #03a9f4;
+}.Setting .color ul li:last-child{
+    background-color: #4caf50;
+}
+.Next_Or_Random{
+    padding: 15px;
+    background-color: #eee;
+    margin-top: 10px;
+    text-align: center;
+}
+.Next_Or_Random h3{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.Next_Or_Random .buttons button,
+.Show_Build .buttons button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--Main-Color);
+    border: none;
+    margin:5px ;
+    font-size: 17px;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: var(--Main-transition);
+}
+.Next_Or_Random .buttons button.active{
+    opacity: 1;   
+}
+.Show_Build .buttons button.active{
+    opacity: 1;   
+}
+.Show_Build{
+    text-align: center;
+    padding: 10px;
+    background-color: #eee;
+margin-top: 10px;    
+}
+
+
+/* End Setting */
+/* Start Container */
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+@media(min-width:768px){
+    .container{
+        width: 720px;
+    }
+}@media(min-width:992px){
+    .container{
+        width: 960px;
+    }
+}
+/* End Container */
+.Landing .text{
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    color: white;
+}
+.Landing .text h2 span{
+    color: var(--Main-Color);
+    font-size: 40px;
+}
+.Landing .text p{
+    font-size: 23px;
+    margin-top: 10px;
+}
+/* End Landing */
+/* Start About */
+.About {
+    padding: 50px 0px;
+}
+.About .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.About .container .text2{
+    width: 500px;
+}
+.About .container .text2 h1{
+    color: var(--Main-Color);
+    margin-bottom: 10px;
+}
+.About .container .text2 p{
+    font-size: 20px;
+    line-height: 1.8;
+    color: #333;
+}
+.About .container .image img{
+    width: 200px;
+    animation-name: AA ;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes AA{
+    0%{
+        transform: translateY(15%);
+    }   100%{
+        transform: translateY(-10%);
+    }
+}
+@media (max-width:776px) {
+    .About .container{
+        flex-direction: column;
+    }
+.About .container .text2{
+    width: 100%;
+    text-align: center;
+}
+}
+/* End About */
+/* Start Our_Skills */
+.Our_Skills{
+    padding: 50px 0px;
+    background-color: #eee;
+}
+.Our_Skills h3{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.Our_Skills .boxes{
+    padding: 20px;
+    background-color: white;
+}
+.Our_Skills .boxes .box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.Our_Skills .boxes .box span{
+    font-size: 17px;
+    width:100px;
+    transition: var(--Main-transition);
+}
+.Our_Skills .boxes .box .prgras{
+    width: 100%;
+    background-color: #eee;
+    height: 40px;
+    position: relative;
+}
+.Our_Skills .boxes .box .prgras span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--Main-Color);
+    width: 90%;
+    height: 100%;
+}
+/* End Our_Skills */
+/* Start  Our_Gallary */
+.Our_Gallary{
+    padding:   50px 0px ;
+    text-align: center;    
+}
+.Our_Gallary h3{
+    margin-bottom: 25px;
+
+}
+.Our_Gallary .imgs img{
+    width: 200px;
+    cursor: pointer;
+}
+.Overlay{
+    position: fixed; 
+     top: 0;  
+     left: 0; 
+    background-color: rgba(0, 0, 0, 0.624);
+    width: 100%;
+    height: 100%;
+    z-index: 1000000;
+
+}
+.White{
+    padding: 10px;
+    width: 500px;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    background-color: white;
+    transform: translate(-50%,-50%);
+}
+.Newimg{
+    width: 100%;
+}
+.X{
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.img_Con{
+    text-align: center;
+    color: var(--Main-Color);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+/* End  Our_Gallary */
+/* .Start OurFeatures */
+.OurFeatures{
+    padding: 50px 0px;
+    background-color: #eee;
+}
+.OurFeatures .boxes{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 30px;
+}
+.OurFeatures .boxes .box1{
+    text-align: center;
+    padding: 15px;
+}
+.OurFeatures .boxes .box1 img{
+    width: 100px;
+}
+.OurFeatures .boxes .box1 h3{
+    color: var(--Main-Color);
+    margin: 10px 0px;
+    font-size: 25px;
+    position: relative;
+}
+.OurFeatures .boxes .box1 h3::after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 100px;
+    height: 3px;
+    transform: translateX(-50%);
+    background-color: var(--Main-Color);
+}
+.OurFeatures .boxes .box1 p{
+    line-height: 1.8;
+    font-size: 20px;
+    margin-top: 20px;
+}
+/* .End OurFeatures */
+/* Start Testimonials */
+.Testimonials{
+    padding: 50px 0px;
+    position: relative;
+}
+.Testimonials::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: var(--Main-Color);
+    z-index: -1;
+}
+.Testimonials::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #333;
+    z-index: -1;
+}
+.Testimonials .container .Act{
+    color: white;
+}
+.Testimonials .container .flex{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 10px;
+}
+.Testimonials .container .flex img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.Testimonials .container .flex .box{
+    width: calc(100% / 3);
+    background-color: white;
+    padding: 15px;
+}
+@media (max-width:776px) {
+    .Testimonials .container .flex{
+        flex-direction: column;
+        width: 100%;
+    }
+    .Testimonials .container .flex .box{
+        width: 100%;
+    }
+    }
+.Testimonials .container .flex .box p{
+    line-height: 1.8;
+    color: #333;
+}
+.Testimonials .container 
+.flex .box .Flexes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.Testimonials .container 
+.flex .box .Flexes .text{
+    margin-top: 15px;
+}
+.Testimonials .container 
+.flex .box .Flexes .text h3{
+    font-size: 20px;
+}
+.Testimonials .container 
+.flex .box .Flexes .text p{
+color:#707070 ;
+font-style: italic;
+font-size: 24px;
+}
+/* End Testimonials */
+/* Start Contact_Us */
+.Contact_Us{
+    padding: 40px 0px;
+    background-image: url(../imgs/contact.png);
+    background-size: cover;
+}
+.Contact_Us h3{
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--Main-Color);
+}
+.Contact_Us  .grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(350px ,1fr));
+    gap: 25px;
+}
+.Contact_Us  .grid .box input {
+    width: 100%;
+    padding: 15px 5px;
+    margin-bottom: 10px;
+    border: none;
+    border: 1px solid #333;
+    transition: var(--Main-transition)
+}
+.Contact_Us  .grid .box input:focus {
+    outline: none;
+    outline: 2px solid var(--Main-Color);
+}
+.Contact_Us .grid .box2 textarea{
+    height: 70%;
+    width: 100%;
+    padding: 10px;
+    transition: var(--Main-transition);
+    color: #777;
+}
+.Contact_Us .grid .box2 textarea:focus{
+    outline: none;
+    outline: 2px solid var(--Main-Color);
+}
+.Contact_Us .grid .box2 input{
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    background-color: var(--Main-Color);
+    border: none;
+    color: white;
+}
+
+
+
+/* End Contact_Us */
+/* Strat footer */
+footer{
+    padding: 30px;
+    text-align: center;
+    margin-top: 40px;
+    background-color: #333;
+    color: white;
+
+}
+/* End footer */
